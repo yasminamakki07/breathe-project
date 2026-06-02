@@ -37,7 +37,7 @@ function ProgressPage({ user, setUser }) {
   useEffect(() => {
     const fetchSessions = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/sessions/${user.user_id}`);
+        const res = await axios.get(`https://breathe-project-production.up.railway.app/api/sessions/${user.user_id}`);
 
         const newestFirstSessions = [...res.data];
         setSessions(newestFirstSessions);
