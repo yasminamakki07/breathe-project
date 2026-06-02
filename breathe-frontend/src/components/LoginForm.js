@@ -17,7 +17,7 @@ function LoginForm({ setUser }) {
     e.preventDefault();
 
     try {
-      const res = await axios.post("https://breathe-project-production.up.railway.app", formData);
+      const res = await axios.post("https://breathe-project-production.up.railway.app/api/auth/login", formData);
       localStorage.setItem("user", JSON.stringify(res.data.user));
       setUser(res.data.user);
       window.location.href = "/breathing";
