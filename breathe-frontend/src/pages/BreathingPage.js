@@ -105,7 +105,7 @@ function BreathingPage({ user, setUser }) {
     setLoadingMessage(true);
 
     try {
-      const messageRes = await axios.post("http://localhost:5000/api/sessions/generate-message", {
+      const messageRes = await axios.post("https://breathe-project-production.up.railway.app", {
         user_answer: answer,
       });
 
