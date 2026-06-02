@@ -105,7 +105,7 @@ function BreathingPage({ user, setUser }) {
     setLoadingMessage(true);
 
     try {
-      const messageRes = await axios.post("https://breathe-project-production.up.railway.app", {
+      const messageRes = await axios.post("https://breathe-project-production.up.railway.app/api/sessions/generate-message", {
         user_answer: answer,
       });
 
@@ -122,7 +122,7 @@ function BreathingPage({ user, setUser }) {
         progress_score: answer ? 1 : 0,
       };
 
-      await axios.post("http://localhost:5000/api/sessions/save", sessionData);
+      await axios.post("https://breathe-project-production.up.railway.app/api/sessions/save", sessionData);
     } catch (error) {
       console.error("Error handling AI message or saving session:", error);
       setMessage("You did something kind for yourself today. Keep going gently.");
